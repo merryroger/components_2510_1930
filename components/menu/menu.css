@@ -1,33 +1,3 @@
-.menu__parent {
-  
-   width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: auto
-    white-space: nowrap;
-    text-align: center;
-    font-size: 0;s
-    
-    
-}
-
-.menu__parent:before {
-  height: 100%;
-  display: inline-block;
-  vertical-align: middle;
-  content: '';
-}
-
-.menu__block {
-  display: inline-block;
-  white-space: normal;
-  vertical-align: middle;
-  text-align: left;
-
-}
-
 .menu {
   background-color: #444444;
   color: #fff;
@@ -35,7 +5,6 @@
 
   width: 400px;
   margin: auto;
-
 }
   .menu__list {
     display: block;
@@ -67,7 +36,14 @@
 
     .menu__controls {
       float: right;
+      /*color: #8c8880;*/
+      color: #dcd8d0;
       padding: 0;
+      font: 900 12pt Arial, sans-serif;
+    }
+
+    .menu__controls:hover {
+      color: #2c2820;
     }
 
     .menu__hidden {
