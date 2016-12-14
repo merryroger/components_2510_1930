@@ -1,0 +1,62 @@
+form {
+	padding: 15px 0;
+}
+
+.form {
+  background-color: #444444;
+  border: 1px solid #444444;
+  width: 400px;
+  margin: auto;
+  display: block;
+}
+
+.form__pad {
+	padding: 3px 10pt;
+	display: block;
+}
+
+.form__ctrl {
+	text-align: right;
+	color: #999999;
+	font: 400 13px "Times New Roman", serif;
+}
+
+.form__ctrl span {
+	border-bottom: 1px dotted #999999;
+	margin-left: 5pt;
+	cursor: pointer;
+}
+
+.form__hidden {
+	display: none;
+}
+
+.form__elem {
+	margin: 0 0 10px 10pt;
+	color: #333333;
+	font: 400 10pt Tahoma, Arial, sans-serif;
+}
+
+.form__elem label {
+	color: #cccccc;
+	padding-right: 2px;
+	font: 400 12px "Times New Roman", serif;
+}
+
+.form__elem input, .form__elem textarea {
+	border: 1px solid #222222;
+	padding: 2px 2pt;
+	background-color: #cccccc;
+}
+
+button {
+	border: 0;
+	padding: 0;
+	background-color: #444444;
+	color: #999999;
+	font: 400 13px "Times New Roman", serif;
+	cursor: pointer;
+}
+.elem__inline {
+	display: inline-block;
+}
