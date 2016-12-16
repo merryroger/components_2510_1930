@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/merryroger/components_2510_1930/issues"
   },
-  "homepage": "https://github.com/merryroger/components_2510_1930#readme"
+  "homepage": "https://github.com/merryroger/components_2510_1930#readme",
+  "dependencies": {
+    "pug": "^2.0.0-beta6"
+  }
 }

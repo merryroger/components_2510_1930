@@ -3,17 +3,19 @@
 
   class Form {
 
-  	constructor ({ el, data, onSubmit }) {
-  		this.el = el;
+    constructor ({ el, data, onSubmit }) {
+      this.el = el;
       this.initData = data;
-      this._closed = false;
+      this._closed = true;
 
       this._onClick = this._onClick.bind(this);
       this.onSubmit = onSubmit;
 
       this._addEvents();
-  		this.render();
-  	}
+      this.render();
+
+      this.form = this.el.querySelector('.add__form');
+    }
 
     _addEvents() {
       this.el.addEventListener('click', this._onClick);
@@ -35,13 +37,13 @@
     _onClick(event) {
       switch(event.target.dataset.action) {
         case 'add':
-        case 'close': this._toggleForm(); return;
+        case 'close': this._toggleForm();
       }
     }
 
     _onSubmit(event) {
       event.preventDefault();
-      
+
       let data = this._getData();
 
       this.onSubmit(data);
@@ -49,10 +51,10 @@
     }
 
     _toggleForm() {
-      this.form.style.display = (this._closed) ? 'none' : 'block';
+      this.form.style.display = (this._closed) ? 'block' : 'none';
       this._closed = !this._closed;
       
-      if(this._closed)
+      if(!this._closed)
         setTimeout(this._setFocus.bind(this), 1);
       
       this.el.querySelector('.form__open').classList.toggle('form__hidden');
@@ -64,8 +66,8 @@
       this.el.querySelector(`[tabindex="1"]`).focus();
     }
 
-  	render() {
-      
+    render() {
+
       this.el.innerHTML = `<div class="form">
         <div class="form__pad">
           <div class="form__ctrl">
@@ -77,21 +79,20 @@
             <form id="add_form" class="add__form form__hidden">
               <div class="form__elem elem__inline">
                 <label for="url">URL</label><br />
-                <input type="text" name="url" id="url" required="1" autofocus="1" placeholder="Your URL" tabindex="1" />
+                <input type="text" name="url" required autofocus placeholder="Your URL" tabindex="1" />
               </div>
               <div class="form__elem elem__inline">
                 <label for="anchor">Anchor</label><br />
-                <input type="text" name="anchor" id="anchor" required="1" placeholder="Appropriate anchor" tabindex="2" /><br />
+                <input type="text" name="anchor" required placeholder="Appropriate anchor" tabindex="2" />
               </div><br clear="all" />
               <div class="form__elem">
                 <label for="description">Description</label><br />
-                <textarea name="description" rows="2" id="description" tabindex="3"></textarea>
+                <textarea name="description" rows="1" tabindex="3"></textarea>
               </div>
             </form>
           </div>
         </div>
       </div>`;
-      this.form = this.el.querySelector('.add__form');
     }
 
   }
