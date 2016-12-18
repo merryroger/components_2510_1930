@@ -1,10 +1,14 @@
 (function () {
   'use strict';
 
+  // Import
+  let tmpl = window.menuTpl;
+
   class Menu {
     constructor ({el, data}) {
       this.el = el;
       this.initData = data;
+      this.tmpl = tmpl;
       this._onClick = this._onClick.bind(this);
       this._currentCtrl = null;
 
@@ -51,24 +55,7 @@
     }
     
     render() {
-      function getMenuItems (items) {
-        return items.map((item, index) => {
-          return `<div class="menu__item" data-index="${index}">
-            <a class="pure-menu-link" href="${item.href}" data-action="pick">
-              ${item.anchor}
-            </a>
-            <div class="menu__controls" data-action="remove">&times;</div>
-            <details class="menu__details">${item.details}</details>
-          </div>`;
-        }).join('');
-      }
-
-      this.el.innerHTML = `<div class="menu">
-            <div class="menu__title">${this.initData.title}</div>
-            <div class="menu__list">
-              ${getMenuItems(this.initData.items)}
-            </div>
-          </div>`;
+      this.el.innerHTML = this.tmpl(this.initData);
     }
 
   }
