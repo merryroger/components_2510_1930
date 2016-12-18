@@ -1,0 +1,8 @@
+div.menu
+	div.menu__title=title
+	div.menu__list
+		each item, index in items
+			div.menu__item(data-index=index)
+				a.pure-menu-link(href=item.href data-action="pick")=item.anchor
+				div.menu__controls(data-action="remove") &times;
+				details.menu__details=item.details

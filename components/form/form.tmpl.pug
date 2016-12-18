@@ -1,0 +1,21 @@
+div.form
+	div.form__pad
+		div.form__ctrl
+			span.form__open(data-action="add") Add
+			button.form__submit.form__hidden(form="add_form" type="submit")
+				span Append an item
+			span.form__close.form__hidden(data-action="close") Cancel
+			form#add_form.add__form.form__hidden
+				div.form__elem.elem__inline
+					label(for="url") URL
+					br
+					input(type="text" name="url" required autofocus placeholder="Your URL" tabindex="1")
+				div.form__elem.elem__inline
+					label(for="anchor") Anchor
+					br
+					input(type="text" name="anchor" required placeholder="Appropriate anchor" tabindex="2")
+				br(clear="all")
+				div.form__elem
+					label(for="description") Description
+					br
+					textarea(name="description" rows="1" tabindex="3")

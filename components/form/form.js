@@ -1,11 +1,15 @@
 (function () {
   'use strict';
 
+  //Import
+  let tmpl = window.formTpl;
+
   class Form {
 
     constructor ({ el, data, onSubmit }) {
       this.el = el;
       this.initData = data;
+      this.tmpl = tmpl;
       this._closed = true;
 
       this._onClick = this._onClick.bind(this);
@@ -67,7 +71,8 @@
     }
 
     render() {
-
+      this.el.innerHTML = this.tmpl(this.initData);
+/*
       this.el.innerHTML = `<div class="form">
         <div class="form__pad">
           <div class="form__ctrl">
@@ -93,6 +98,7 @@
           </div>
         </div>
       </div>`;
+    */
     }
 
   }
